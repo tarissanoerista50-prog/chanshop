@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — Chanshop</title>
+  <link rel="icon" href="assets/svg/logo.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <img src="assets/svg/logo.svg" alt="" class="logo" />
+        <span>chanshop</span>
+      </a>
+      <h1 class="sr-only">Checkout</h1>
+    </div>
+  </header>
+
+  <main class="container section">
+    <div class="grid-2 gap">
+      <section class="card">
+        <h2>Ringkasan Pesanan</h2>
+        <div id="summaryItems" class="summary-items"></div>
+        <div class="cart-total mt">
+          <span>Total</span>
+          <strong id="summaryTotal">Rp 0</strong>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Data Pengiriman</h2>
+        <form id="checkoutForm" class="stack">
+          <label>Nama Penerima
+            <input type="text" name="name" required />
+          </label>
+          <label>Alamat
+            <textarea name="address" rows="3" required></textarea>
+          </label>
+          <label>No. HP
+            <input type="tel" name="phone" required />
+          </label>
+          <label>Metode Pembayaran
+            <select name="payment" required>
+              <option value="transfer">Transfer Bank</option>
+              <option value="cod">COD</option>
+              <option value="qris">QRIS</option>
+            </select>
+          </label>
+          <button type="submit" class="btn primary">Buat Pesanan</button>
+          <p id="orderStatus" class="status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container foot-inner">
+      <p>&copy; <span id="year"></span> Chanshop.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

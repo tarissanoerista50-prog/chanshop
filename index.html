@@ -2,77 +2,94 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chanshop – Toko Sepatu Kekinian</title>
-  <meta name="description" content="Chanshop: sepatu kekinian, ringan, nyaman. Best seller slider, keranjang, checkout, testimoni, dan form kritik & saran."/>
-  <link rel="preload" href="assets/images/logo.svg" as="image" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chanshop — Sepatu Branded Kekinian</title>
+  <meta name="description" content="Chanshop: toko sepatu branded kekinian di Bogor. Baby blue & broken white aesthetic." />
+  <link rel="icon" href="assets/svg/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <header class="header">
-    <div class="container header-inner">
-      <a class="brand" href="#home" aria-label="Chanshop home">
-        <img src="assets/images/logo.svg" alt="Logo Chanshop" width="40" height="40"/>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#" class="brand" aria-label="Beranda Chanshop">
+        <img src="assets/svg/logo.svg" alt="Logo Chanshop" class="logo" />
         <span>chanshop</span>
       </a>
-      <nav class="nav" aria-label="Navigasi utama">
-        <a href="#best-sellers">Best Seller</a>
+      <nav class="menu" aria-label="Menu utama">
+        <a href="#best-sellers">Terlaris</a>
         <a href="#testimoni">Testimoni</a>
         <a href="#kritik-saran">Kritik & Saran</a>
-        <button id="cartButton" class="btn ghost" aria-label="Buka Keranjang">
-          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M7 4h-2l-1 2v2h2l3.6 7.59-1.35 2.41a1 1 0 0 0 .9 1.5h10v-2H10.42l.93-1.66h6.65a1 1 0 0 0 .9-.55L23 6H6.21l-.94-2zM7 22a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm10 0a2 2 0 1 0 .001-4.001A2 2 0 0 0 17 22z"/></svg>
-          <span id="cartCount" class="badge" aria-live="polite">0</span>
-        </button>
+        <a href="#alamat">Alamat</a>
       </nav>
+      <button id="cartBtn" class="btn cart-btn" aria-label="Buka keranjang belanja">
+        <img src="assets/svg/cart.svg" alt="" width="20" height="20"/> 
+        <span id="cartCount" class="badge">0</span>
+      </button>
     </div>
   </header>
 
-  <main id="home">
-    <section class="hero">
-      <div class="container hero-inner">
-        <div>
-          <h1>Sepatu Kekinian, Nyaman, dan Stylish</h1>
-          <p>Temukan koleksi terbaik kami dengan harga bersahabat. Tambahkan ke keranjang, lalu checkout lewat WhatsApp—mudah dan cepat!</p>
-          <a href="#best-sellers" class="btn primary">Lihat Best Seller</a>
-        </div>
-        <img class="hero-art" src="assets/images/hero.svg" alt="Ilustrasi sepatu modern"/>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h1>Sepatu Branded Kekinian</h1>
+        <p>Upgrade gaya kamu dengan koleksi terkurasi dari Chanshop. Nyaman dipakai, desain timeless, dan siap dikirim ke seluruh Indonesia.</p>
+        <a href="#best-sellers" class="btn primary">Lihat Terlaris</a>
       </div>
-    </section>
+      <div class="hero-art" role="img" aria-label="Ilustrasi sepatu trendy">
+        <img src="assets/svg/hero-shoes.svg" alt="" />
+      </div>
+    </div>
+  </section>
 
+  <main class="container">
     <section id="best-sellers" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Produk Terlaris</h2>
-          <p>Maksimal 5 item unggulan kami.</p>
+      <div class="section-head">
+        <h2>Produk Terlaris</h2>
+        <div class="slider-controls">
+          <button class="icon-btn" id="prevBtn" aria-label="Produk sebelumnya">
+            &#10094;
+          </button>
+          <button class="icon-btn" id="nextBtn" aria-label="Produk selanjutnya">
+            &#10095;
+          </button>
         </div>
+      </div>
 
-        <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Produk Terlaris">
-          <button class="carousel-btn prev" aria-label="Sebelumnya" id="prevSlide">&#10094;</button>
-          <div class="carousel-track" id="carouselTrack" tabindex="0" aria-live="polite"></div>
-          <button class="carousel-btn next" aria-label="Berikutnya" id="nextSlide">&#10095;</button>
-        </div>
+      <div class="slider" aria-roledescription="carousel" aria-label="Slider produk terlaris">
+        <ul class="slides" id="productSlides" role="list">
+          <!-- Slides di-generate oleh JS -->
+        </ul>
       </div>
     </section>
 
-    <section id="testimoni" class="section alt">
-      <div class="container">
-        <div class="section-head">
-          <h2>Testimoni Pelanggan</h2>
-          <p>Pengalaman asli dari pelanggan kami.</p>
-        </div>
+    <section id="testimoni" class="section">
+      <h2>Testimoni Pelanggan</h2>
+      <div id="testimonialList" class="testimonials" aria-live="polite">
+        <!-- Diisi via JS + localStorage -->
+      </div>
 
-        <div id="testimonialList" class="testimonials" aria-live="polite"></div>
-
-        <form id="testimonialForm" class="card form" aria-labelledby="formTestiTitle">
-          <h3 id="formTestiTitle">Tambah Testimoni</h3>
-          <label>Nama
-            <input type="text" name="name" placeholder="Nama Anda" required/>
-          </label>
-          <label>Rating (1–5)
-            <input type="number" name="rating" min="1" max="5" value="5" required/>
-          </label>
+      <div class="card mt">
+        <h3>Tambah Testimoni</h3>
+        <form id="testimonialForm" class="stack" aria-label="Form tambah testimoni pelanggan">
+          <div class="grid-2">
+            <label>Nama
+              <input type="text" name="name" placeholder="Nama kamu" required />
+            </label>
+            <label>Rating
+              <select name="rating" required>
+                <option value="5">5 ⭐</option>
+                <option value="4">4 ⭐</option>
+                <option value="3">3 ⭐</option>
+                <option value="2">2 ⭐</option>
+                <option value="1">1 ⭐</option>
+              </select>
+            </label>
+          </div>
           <label>Pesan
-            <textarea name="message" rows="3" placeholder="Ceritakan pengalaman Anda" required></textarea>
+            <textarea name="message" rows="3" placeholder="Ceritakan pengalamanmu..." required></textarea>
           </label>
           <button type="submit" class="btn primary">Kirim Testimoni</button>
         </form>
@@ -80,57 +97,69 @@
     </section>
 
     <section id="kritik-saran" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Kritik & Saran</h2>
-          <p>Bantu kami jadi lebih baik.</p>
-        </div>
-        <form id="feedbackForm" class="card form" aria-labelledby="formFeedbackTitle">
-          <h3 id="formFeedbackTitle">Form Kritik & Saran</h3>
-          <label>Nama
-            <input type="text" name="name" placeholder="Nama Anda" required/>
-          </label>
-          <label>Email
-            <input type="email" name="email" placeholder="email@contoh.com" required/>
-          </label>
+      <h2>Kritik & Saran</h2>
+      <div class="card">
+        <form id="feedbackForm" class="stack" aria-label="Form kritik dan saran">
+          <div class="grid-2">
+            <label>Nama
+              <input type="text" name="name" placeholder="Nama kamu" required />
+            </label>
+            <label>Email
+              <input type="email" name="email" placeholder="email@contoh.com" required />
+            </label>
+          </div>
           <label>Pesan
-            <textarea name="message" rows="4" placeholder="Tulis kritik/saran Anda" required></textarea>
+            <textarea name="message" rows="4" placeholder="Tulis masukan kamu di sini..." required></textarea>
           </label>
-          <button type="submit" class="btn primary">Kirim</button>
-          <p class="muted">* Disimpan di perangkat Anda (localStorage). Anda bisa ekspor jika diperlukan.</p>
+          <button type="submit" class="btn">Kirim</button>
+          <p id="feedbackStatus" class="status" role="status" aria-live="polite"></p>
         </form>
+      </div>
+    </section>
+
+    <section id="alamat" class="section">
+      <h2>Alamat Toko</h2>
+      <div class="card address">
+        <p><strong>Chanshop</strong><br>
+        Jl. Dipenegori 74, Bogor</p>
+        <a class="btn outline" target="_blank" rel="noreferrer noopener" href="https://maps.google.com/?q=Jl.+Dipenegori+74,+Bogor">Lihat di Google Maps</a>
       </div>
     </section>
   </main>
 
-  <aside id="cartDrawer" class="cart" aria-hidden="true" aria-labelledby="cartTitle" role="dialog">
-    <div class="cart-inner">
-      <div class="cart-head">
-        <h3 id="cartTitle">Keranjang</h3>
-        <button id="closeCart" class="btn ghost" aria-label="Tutup Keranjang">✕</button>
+  <!-- Cart Drawer -->
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <header class="cart-header">
+        <h3 id="cartTitle">Keranjang Belanja</h3>
+        <button id="closeCart" class="icon-btn" aria-label="Tutup keranjang">&times;</button>
+      </header>
+      <div id="cartItems" class="cart-items">
+        <!-- Items via JS -->
       </div>
-      <div id="cartItems" class="cart-items"></div>
-      <div class="cart-foot">
-        <div class="cart-total">Total: <span id="cartTotal">Rp0</span></div>
-        <button id="checkoutBtn" class="btn primary">Checkout</button>
-      </div>
+      <footer class="cart-footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <strong id="cartTotal">Rp 0</strong>
+        </div>
+        <a href="checkout.html" class="btn primary w-full" id="checkoutBtn">Checkout</a>
+      </footer>
     </div>
+    <div class="backdrop" id="cartBackdrop" tabindex="-1" aria-hidden="true"></div>
   </aside>
 
   <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-info">
-        <h4>Alamat Toko</h4>
-        <p>Jl. Dipenegori 74, Bogor</p>
-      </div>
-      <div class="footer-brand">
-        <img src="assets/images/logo.svg" width="36" height="36" alt="Logo Chanshop kecil"/>
-        <strong>chanshop</strong>
-        <span>© <span id="year"></span> · All rights reserved.</span>
-      </div>
+    <div class="container foot-inner">
+      <p>&copy; <span id="year"></span> Chanshop. All rights reserved.</p>
+      <nav class="foot-nav">
+        <a href="#">Beranda</a>
+        <a href="#best-sellers">Terlaris</a>
+        <a href="#testimoni">Testimoni</a>
+      </nav>
     </div>
   </footer>
 
+  <script src="assets/js/data.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
 </html>
