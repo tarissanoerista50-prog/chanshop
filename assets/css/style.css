@@ -1,0 +1,81 @@
+
+:root{
+  --baby-blue: #89CFF0;
+  --baby-blue-600: #66B6E5;
+  --broken-white: #F8F8F8;
+  --ink: #0F172A;
+  --muted: #64748B;
+  --card: #FFFFFF;
+  --ring: rgba(102,182,229,.4);
+  --shadow: 0 10px 25px rgba(0,0,0,.07);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--ink);background:var(--broken-white)}
+img{max-width:100%;height:auto;display:block}
+
+.container{width:min(1100px,90vw);margin-inline:auto}
+.header{position:sticky;top:0;background:#fff;box-shadow:var(--shadow);z-index:50}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:800;font-size:1.25rem;text-transform:lowercase}
+.nav{display:flex;align-items:center;gap:16px}
+.nav a{color:var(--ink);text-decoration:none;font-weight:600;opacity:.8}
+.nav a:hover{opacity:1}
+.badge{background:var(--baby-blue);color:#fff;border-radius:999px;padding:2px 8px;font-size:.75rem;margin-left:6px}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:14px;border:0;cursor:pointer;font-weight:700;box-shadow:var(--shadow)}
+.btn.primary{background:var(--baby-blue);color:#fff}
+.btn.primary:hover{background:var(--baby-blue-600)}
+.btn.ghost{background:#fff;color:var(--ink)}
+
+.hero{background:linear-gradient(180deg,rgba(137,207,240,.25),transparent)}
+.hero-inner{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;padding:48px 0}
+.hero h1{font-size:2.2rem;margin:0 0 10px}
+.hero p{color:var(--muted);margin:0 0 20px}
+.hero-art{filter:drop-shadow(var(--shadow));}
+
+.section{padding:48px 0}
+.section.alt{background:#fff}
+.section-head h2{margin:0 0 6px}
+.section-head p{margin:0;color:var(--muted)}
+
+.carousel{position:relative;margin-top:18px}
+.carousel-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc(100% / 1.15);gap:16px;overflow:hidden;scroll-behavior:smooth}
+@media(min-width:720px){ .carousel-track{grid-auto-columns:calc(100%/2.2)} }
+@media(min-width:980px){ .carousel-track{grid-auto-columns:calc(100%/3.2)} }
+.card{background:var(--card);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
+.product-card{display:flex;flex-direction:column;gap:10px}
+.product-card .title{font-weight:800;margin:0}
+.price{font-weight:800}
+.muted{color:var(--muted)}
+.product-actions{display:flex;align-items:center;gap:10px;justify-content:space-between}
+
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);border:0;background:#fff;border-radius:999px;width:38px;height:38px;box-shadow:var(--shadow);cursor:pointer}
+.carousel-btn.prev{left:-6px}
+.carousel-btn.next{right:-6px}
+
+.testimonials{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:16px}
+@media(min-width:760px){.testimonials{grid-template-columns:repeat(3,1fr)}}
+.testi-card{display:flex;flex-direction:column;gap:6px}
+.stars{letter-spacing:2px}
+
+.form{display:grid;gap:12px}
+.form label{display:grid;gap:6px;font-weight:700}
+input,textarea{padding:12px;border-radius:12px;border:1.5px solid #e5e7eb;font:inherit}
+input:focus,textarea:focus{outline:3px solid var(--ring);border-color:transparent}
+
+.cart{position:fixed;inset:0 0 0 auto;width:min(420px,92vw);transform:translateX(110%);transition:transform .25s ease-out;background:#fff;box-shadow:var(--shadow);z-index:60}
+.cart.open{transform:translateX(0)}
+.cart-inner{display:flex;flex-direction:column;height:100%}
+.cart-head{display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:1px solid #eee}
+.cart-items{flex:1;overflow:auto;display:grid;gap:10px;padding:16px}
+.cart-foot{border-top:1px solid #eee;padding:16px;display:grid;gap:10px}
+.cart-item{display:flex;gap:12px;align-items:center}
+.cart-item img{width:64px;height:64px;object-fit:contain;background:var(--broken-white);border-radius:12px}
+.cart-item .meta{flex:1}
+.cart-total{font-weight:800;font-size:1.1rem}
+.footer{background:#fff;border-top:1px solid #eee;margin-top:40px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:10px;flex-wrap:wrap}
+.footer-brand{display:flex;align-items:center;gap:10px}
+.footer-info h4{margin:0 0 6px}
+.footer-info p{margin:0}
