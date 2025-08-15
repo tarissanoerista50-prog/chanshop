@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200">
+  <defs>
+    <filter id="shadow"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity=".18"/></filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FAFAF7"/>
+  <g filter="url(#shadow)">
+    <path d="M40 120c30 10 60 15 100 4 20-6 40-20 60-20 20 0 30 10 52 24 6 4 10 8 10 12 0 14-180 18-222 10-8-2-10-16 0-30z" fill="#8EC8FF"/>
+    <path d="M54 126c12 6 20 8 36 10 36 4 88-6 120-18 8-3 18-3 24 0 10 4 22 13 30 21-80 8-168 14-216 4-2-6 0-12 6-17z" fill="#BEE2FF" opacity=".9"/>
+    <rect x="120" y="86" width="68" height="10" rx="5" fill="#ffffff"/>
+    <rect x="120" y="100" width="68" height="10" rx="5" fill="#ffffff"/>
+    <rect x="120" y="114" width="68" height="10" rx="5" fill="#ffffff"/>
+    <circle cx="240" cy="118" r="12" fill="#1f2937"/>
+    <rect x="36" y="140" width="248" height="16" rx="8" fill="#0f172a" opacity=".1"/>
+  </g>
+  <text x="16" y="28" font-family="Inter, Arial, sans-serif" font-size="18" fill="#0f172a">Trail Rift</text>
+</svg>
